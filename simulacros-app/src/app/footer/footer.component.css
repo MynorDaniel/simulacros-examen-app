@@ -1,0 +1,29 @@
+.footer {
+    width: 100%; /* Ocupar todo el ancho de la pantalla */
+    background-color: #fff8f8; /* Color de fondo, igual que el del main */
+    color: rgb(0, 0, 0); /* Color del texto */
+}
+
+.footer .text-muted {
+    color: rgba(255, 255, 255, 0.7); /* Color más claro para el texto */
+}
+
+.footer a {
+    color: rgba(255, 255, 255, 0.8); /* Color de los enlaces */
+}
+
+.footer a:hover {
+    color: white; /* Color de los enlaces al pasar el mouse */
+}
+
+.footer .nav {
+    margin: 0; /* Eliminar margen para una mejor alineación */
+}
+
+:host {
+    display: block; /* Asegura que el host ocupa todo el espacio */
+    margin: 0;
+    padding: 0;
+}
+
+

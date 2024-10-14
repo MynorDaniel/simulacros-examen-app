@@ -1,1 +1,27 @@
-<div class="gradient-banner"></div>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">
+        <img src="assets/img/books.ico" alt="Logo" style="width: 40px;">
+      </a>
+      
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="navbarOpen ? 'true' : 'false'" aria-controls="navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']">Inicio</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/cursos']">Cursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/reglas']">Reglas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  

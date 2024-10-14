@@ -1,9 +1,40 @@
-.gradient-banner {
-    height: 40px;
-    background: linear-gradient(45deg, #000000, #eb6565);
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    color: white; 
-    text-align: center; 
+.navbar {
+    background-color: #da362a;
+    padding: 1rem;
+  }
+
+  .navbar a{
+    color: #fff;
+  }
+  
+  .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+  }
+  
+  .nav-link:hover {
+    color: #fff;
+  }
+  
+  .navbar-brand img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .collapse.show {
+    display: block !important;
+  }
+  
+  @media (max-width: 992px) {
+    .collapse {
+      display: none;
+    }
+  }
+
+  :host {
+    display: block; 
+    margin: 0;
+    padding: 0;
 }
+
+  

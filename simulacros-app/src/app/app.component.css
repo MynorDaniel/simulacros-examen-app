@@ -1,0 +1,17 @@
+html, body {
+    margin: 0; /* Eliminar márgenes por defecto del navegador */
+    padding: 0; /* Eliminar padding por defecto del navegador */
+    height: 100%; /* Asegurar que el body ocupa toda la altura */
+}
+
+app-header, app-footer {
+    display: block; /* Asegurar que se comporten como bloques */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+}
+
+router-outlet {
+    display: block; /* Asegurar que se comporta como bloque */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+}
