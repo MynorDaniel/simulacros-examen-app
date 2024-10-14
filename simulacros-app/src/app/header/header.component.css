@@ -1,0 +1,9 @@
+.gradient-banner {
+    height: 40px;
+    background: linear-gradient(45deg, #000000, #eb6565);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+    text-align: center; 
+}
