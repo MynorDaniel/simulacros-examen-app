@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cursos',
   standalone: true,
-  imports: [],
   templateUrl: './cursos.component.html',
-  styleUrl: './cursos.component.css'
+  styleUrls: ['./cursos.component.css']
 })
 export class CursosComponent {
 
+  constructor(private router: Router) {}
+
+  navigateTo(curso: string, tipo: string) {
+    this.router.navigate(['examen', curso, tipo]);
+  }
 }

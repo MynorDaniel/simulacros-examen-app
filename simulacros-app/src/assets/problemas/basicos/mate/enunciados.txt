@@ -1,11 +1,60 @@
-{"enunciado": "¿Cuánto es $2 + 2$?", "respuesta1": "4", "respuesta2": "2", "respuesta3": "5"}////
-{"enunciado": "Resuelve $x + 3 = 5$. ¿Cuál es el valor de $x$?", "respuesta1": "2", "respuesta2": "5", "respuesta3": "3"}////
-{"enunciado": "Si $3x = 9$, ¿cuál es el valor de $x$?", "respuesta1": "3", "respuesta2": "9", "respuesta3": "1"}////
-{"enunciado": "Simplifica $\\frac{4x}{2}$", "respuesta1": "$2x$", "respuesta2": "$4x$", "respuesta3": "$x$"}////
-{"enunciado": "Resuelve $x^2 = 16$. ¿Cuál es el valor de $x$?", "respuesta1": "4", "respuesta2": "8", "respuesta3": "2"}////
-{"enunciado": "Encuentra el valor de $x$ en la ecuación $2x + 6 = 10$.", "respuesta1": "2", "respuesta2": "4", "respuesta3": "6"}////
-{"enunciado": "Resuelve la ecuación $5x - 10 = 0$ para $x$.", "respuesta1": "2", "respuesta2": "5", "respuesta3": "10"}////
-{"enunciado": "Simplifica $3x + 2x$", "respuesta1": "$5x$", "respuesta2": "$6x$", "respuesta3": "$x$"}////
-{"enunciado": "¿Cuál es la pendiente de la recta $y = 3x + 4$?", "respuesta1": "3", "respuesta2": "4", "respuesta3": "0"}////
-{"enunciado": "Resuelve $\\frac{4x}{2} = 6$ para $x$.", "respuesta1": "3", "respuesta2": "6", "respuesta3": "12"}
-
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mfrac><mn>4</mn><mn>2</mn></mfrac> = <mn>6</mn> <mo>&#8296;</mo> <mtext>para</mtext> <mo>&#8296;</mo> <mi>x</mi></math>", 
+  "respuesta1": "4", 
+  "respuesta2": "2", 
+  "respuesta3": "5"
+}////
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mtext>Resuelve</mtext> <mo>(</mo><mi>x</mi> + <mn>3</mn><mo>)</mo> = <mn>5</mn>. <mtext>¿Cuál es el valor de</mtext> <mi>x</mi>?</math>", 
+  "respuesta1": "2", 
+  "respuesta2": "5", 
+  "respuesta3": "3"
+}////
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mtext>Si</mtext> <mo>(</mo><mn>3</mn><mi>x</mi> = <mn>9</mn><mo>)</mo>, <mtext>¿cuál es el valor de</mtext> <mi>x</mi>?</math>", 
+  "respuesta1": "3", 
+  "respuesta2": "9", 
+  "respuesta3": "1"
+}////
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mtext>Simplifica</mtext> <mfrac><mn>4</mn><mn>2</mn></mfrac></math>", 
+  "respuesta1": "2x", 
+  "respuesta2": "4x", 
+  "respuesta3": "x"
+}////
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mtext>Resuelve</mtext> <mo>(</mo><mi>x</mi>^<mn>2</mn><mo>)</mo> = <mn>16</mn>. <mtext>¿Cuál es el valor de</mtext> <mi>x</mi>?</math>", 
+  "respuesta1": "4", 
+  "respuesta2": "8", 
+  "respuesta3": "2"
+}////
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mtext>Encuentra el valor de</mtext> <mi>x</mi> <mtext>en la ecuación</mtext> <mo>(</mo><mn>2</mn><mi>x</mi> + <mn>6</mn> = <mn>10</mn><mo>)</mo>.</math>", 
+  "respuesta1": "2", 
+  "respuesta2": "4", 
+  "respuesta3": "6"
+}////
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mtext>Resuelve la ecuación</mtext> <mo>(</mo><mn>5</mn><mi>x</mi> - <mn>10</mn> = <mn>0</mn><mo>)</mo> <mtext>para</mtext> <mi>x</mi>.</math>", 
+  "respuesta1": "2", 
+  "respuesta2": "5", 
+  "respuesta3": "10"
+}////
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mtext>Simplifica</mtext> <mo>(</mo><mn>3</mn><mi>x</mi> + <mn>2</mn><mi>x</mi><mo>)</mo></math>", 
+  "respuesta1": "5x", 
+  "respuesta2": "6x", 
+  "respuesta3": "x"
+}////
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mtext>¿Cuál es la pendiente de la recta</mtext> <mo>(</mo><mi>y</mi> = <mn>3</mn><mi>x</mi> + <mn>4</mn><mo>)</mo>?</math>", 
+  "respuesta1": "3", 
+  "respuesta2": "4", 
+  "respuesta3": "0"
+}////
+{
+  "enunciado": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mfrac><mn>4</mn><mn>2</mn></mfrac> = <mn>6</mn> <mo>&#8296;</mo> <mtext>para</mtext> <mo>&#8296;</mo> <mi>x</mi></math>", 
+  "respuesta1": "3", 
+  "respuesta2": "6", 
+  "respuesta3": "12"
+}

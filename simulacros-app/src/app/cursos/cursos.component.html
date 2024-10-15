@@ -1,1 +1,203 @@
-<p>cursos works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Curso</th>
+        <th>Tipo</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Curso: Básico de Matemática -->
+      <tr>
+        <td>Básico de Matemática</td>
+        <td>
+          <select #selectedExamMatematica>
+            <option value="examen-base">Examen Base</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('basico-matematica', selectedExamMatematica.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Básico de Lenguaje -->
+      <tr>
+        <td>Básico de Lenguaje</td>
+        <td>
+          <select #selectedExamLenguaje>
+            <option value="examen-base">Examen Base</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('basico-lenguaje', selectedExamLenguaje.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Básico de Física -->
+      <tr>
+        <td>Básico de Física</td>
+        <td>
+          <select #selectedExamFisica>
+            <option value="examen-base">Examen Base</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('basico-fisica', selectedExamFisica.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Específico de Matemática -->
+      <tr>
+        <td>Específico de Matemática</td>
+        <td>
+          <select #selectedExamEspMate>
+            <option value="examen-base">Examen Base</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('especifico-matematica', selectedExamEspMate.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Específico de Computación -->
+      <tr>
+        <td>Específico de Computación</td>
+        <td>
+          <select #selectedExamEspComp>
+            <option value="examen-base">Examen Base</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('especifico-computacion', selectedExamEspComp.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Matemática Básica 1 -->
+      <tr>
+        <td>Matemática Básica 1</td>
+        <td>
+          <select #selectedExamMatBasica1>
+            <option value="1er-parcial">1er Parcial</option>
+            <option value="2do-parcial">2do Parcial</option>
+            <option value="3er-parcial">3er Parcial</option>
+            <option value="final">Final</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('matematica-basica-1', selectedExamMatBasica1.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Matemática Básica 2 -->
+      <tr>
+        <td>Matemática Básica 2</td>
+        <td>
+          <select #selectedExamMatBasica2>
+            <option value="1er-parcial">1er Parcial</option>
+            <option value="2do-parcial">2do Parcial</option>
+            <option value="3er-parcial">3er Parcial</option>
+            <option value="final">Final</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('matematica-basica-2', selectedExamMatBasica2.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Matemática Intermedia 1 -->
+      <tr>
+        <td>Matemática Intermedia 1</td>
+        <td>
+          <select #selectedExamMatIntermedia1>
+            <option value="1er-parcial">1er Parcial</option>
+            <option value="2do-parcial">2do Parcial</option>
+            <option value="3er-parcial">3er Parcial</option>
+            <option value="final">Final</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('matematica-intermedia-1', selectedExamMatIntermedia1.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Matemática Intermedia 2 -->
+      <tr>
+        <td>Matemática Intermedia 2</td>
+        <td>
+          <select #selectedExamMatIntermedia2>
+            <option value="1er-parcial">1er Parcial</option>
+            <option value="2do-parcial">2do Parcial</option>
+            <option value="3er-parcial">3er Parcial</option>
+            <option value="final">Final</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('matematica-intermedia-2', selectedExamMatIntermedia2.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Matemática Intermedia 3 -->
+      <tr>
+        <td>Matemática Intermedia 3</td>
+        <td>
+          <select #selectedExamMatIntermedia3>
+            <option value="1er-parcial">1er Parcial</option>
+            <option value="2do-parcial">2do Parcial</option>
+            <option value="3er-parcial">3er Parcial</option>
+            <option value="final">Final</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('matematica-intermedia-3', selectedExamMatIntermedia3.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Física Básica -->
+      <tr>
+        <td>Física Básica</td>
+        <td>
+          <select #selectedExamFisicaBasica>
+            <option value="1er-parcial">1er Parcial</option>
+            <option value="2do-parcial">2do Parcial</option>
+            <option value="3er-parcial">3er Parcial</option>
+            <option value="final">Final</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('fisica-basica', selectedExamFisicaBasica.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Física 1 -->
+      <tr>
+        <td>Física 1</td>
+        <td>
+          <select #selectedExamFisica1>
+            <option value="1er-parcial">1er Parcial</option>
+            <option value="2do-parcial">2do Parcial</option>
+            <option value="3er-parcial">3er Parcial</option>
+            <option value="final">Final</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('fisica-1', selectedExamFisica1.value)">Empezar examen</button>
+        </td>
+      </tr>
+  
+      <!-- Curso: Física 2 -->
+      <tr>
+        <td>Física 2</td>
+        <td>
+          <select #selectedExamFisica2>
+            <option value="1er-parcial">1er Parcial</option>
+            <option value="2do-parcial">2do Parcial</option>
+            <option value="3er-parcial">3er Parcial</option>
+            <option value="final">Final</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="navigateTo('fisica-2', selectedExamFisica2.value)">Empezar examen</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

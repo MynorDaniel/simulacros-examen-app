@@ -1,1 +1,31 @@
-<p>examen works!</p>
+
+
+<div class="examen-container">
+    <h2>Examen</h2>
+  
+    <div *ngFor="let problema of problemas; let i = index" class="problema-container">
+
+      <div [innerHTML]="problema.enunciado | mathjax"></div>
+  
+      <div class="opciones">
+        <label>
+          <input type="radio" name="respuesta{{ i }}" (click)="seleccionarRespuesta(i, problema.respuesta1)" />
+          a) {{ problema.respuesta1 }}
+        </label>
+        <label>
+          <input type="radio" name="respuesta{{ i }}" (click)="seleccionarRespuesta(i, problema.respuesta2)" />
+          b) {{ problema.respuesta2 }}
+        </label>
+        <label>
+          <input type="radio" name="respuesta{{ i }}" (click)="seleccionarRespuesta(i, problema.respuesta3)" />
+          c) {{ problema.respuesta3 }}
+        </label>
+      </div>
+    </div>
+  
+    <!-- Botón para terminar el examen -->
+    <div class="terminar-examen">
+      <button (click)="terminarExamen()">Terminar Examen</button>
+    </div>
+  </div>
+  

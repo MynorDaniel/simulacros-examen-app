@@ -1,0 +1,82 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+thead th {
+  background-color: #ca5050; 
+  color: white;
+  padding: 12px 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+tbody tr {
+  border-bottom: 1px solid #dddddd;
+  transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1; 
+}
+
+td {
+  padding: 12px 15px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+select:focus {
+  border-color: #007bff;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.table select {
+  margin: 0;
+}
+
+
+button {
+  background-color: #c98328; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #8f4b14;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 16px;
+  }
+
+  select {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
