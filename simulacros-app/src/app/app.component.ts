@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './main/main.component';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,6 @@ import { MainComponent } from './main/main.component';
   imports: [
     RouterOutlet,
     HeaderComponent,
-    MainComponent,
     FooterComponent
   ],
   templateUrl: './app.component.html',

@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  navbarOpen = false;
-
-  // Alternar el estado del menú
-  toggleNavbar() {
-    this.navbarOpen = !this.navbarOpen;
+  showMenu = false;
+  toggleNavbar(){
+    this.showMenu = !this.showMenu;
   }
 }

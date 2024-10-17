@@ -1,27 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-      <a class="navbar-brand" routerLink="">
-        <img src="assets/img/books.ico" alt="Logo" style="width: 40px;">
-      </a>
-      
-      <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="navbarOpen ? 'true' : 'false'" aria-controls="navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/']">Inicio</a>
-            </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['cursos']">Cursos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/reglas']">Reglas</a>
-          </li>
-        </ul>
-      </div>
+<header class="sticky w-full">
+    <div class="bg-red-700 shadow-lg py-5 px-7">
+        <nav class="flex justify-between">
+            <div class="flex items-center space-x-3 lg:pr-16 pr-6">
+                <img src="assets/img/books.ico" class="w-8 h-8">                      
+                <h2 class="text-2xl leading-6 text-white font-bold">ExamiNation</h2>
+            </div>
+
+            <ul class="hidden md:flex flex-auto justify-end space-x-3 sm:block">
+                <a routerLink="main" routerLinkActive="bg-red-600"  class="hover:bg-red-600 text-white cursor-pointer px-3 py-2.5 font-normal text-xl leading-3 shadow-sm rounded-lg">Inicio</a>
+                <a routerLink="cursos" routerLinkActive="bg-red-600"  class="hover:bg-red-600 text-white cursor-pointer px-3 py-2.5 font-normal text-xl leading-3 shadow-sm rounded-lg">Cursos</a>
+                <a routerLink="reglas" routerLinkActive="bg-red-600"  class="hover:bg-red-600 text-white cursor-pointer px-3 py-2.5 font-normal text-xl leading-3 shadow-sm rounded-lg">Reglas</a>
+                <a routerLink="teoria" routerLinkActive="bg-red-600"  class="hover:bg-red-600 text-white cursor-pointer px-3 py-2.5 font-normal text-xl leading-3 shadow-sm rounded-lg">Teoria</a>
+            </ul>
+            
+        </nav>
+        <!--for smaller devcies-->
+
+        <!-- <div class="block md:hidden w-full mt-5 ">
+            <div onclick="selectNew()" class="cursor-pointer px-4 py-3 text-white bg-indigo-600 rounded flex justify-between items-center w-full">
+                <div class="flex space-x-2">
+                    <span id="s1" class="font-semibold text-sm leading-3 hidden">Selected: </span><p id="textClicked" class="font-normal text-sm leading-3 focus:outline-none hover:bg-gray-800 duration-100 cursor-pointer ">Collections</p>
+                </div>
+                <svg id="ArrowSVG" class=" transform" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                    
+            </div>
+            <div class=" relative">
+                <ul id="list" class=" hidden font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md">
+                    <li onclick="selectedSmall()" class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">Arts</li>
+                    <li onclick="selectedSmall()" class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">Space</li>
+                    <li onclick="selectedSmall()" class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">Game</li>
+                    <li onclick="selectedSmall()" class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">Utility</li>
+                    <li onclick="selectedSmall()" class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">Cards</li>
+                </ul>
+            </div>
+        </div> -->
     </div>
-  </nav>
-  
-  
+</header>
