@@ -1,12 +1,28 @@
 import { Routes } from '@angular/router';
-import { MainComponent } from './main/main.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { ReglasComponent } from './reglas/reglas.component';
 import { ExamenComponent } from './examen/examen.component';
+import { MainComponent } from './main/main.component';
 
 export const routes: Routes = [
-    { path: '', component: MainComponent},
-    { path: 'cursos', component: CursosComponent},
-    { path: 'reglas', component: ReglasComponent},
-    { path: 'examen/:curso/:tipo', component: ExamenComponent}
+    {   path: 'cursos',
+        title: 'Cursos',
+        component: CursosComponent
+    },
+    {   path: 'main',
+        title: 'Home',
+        component: MainComponent
+    },
+    {   path: 'reglas',
+        title: 'Reglas',
+        component: ReglasComponent
+    },
+    {   path: '',
+        redirectTo: 'main',
+        pathMatch: 'full'  
+    },
+    {   path: 'examen/:curso/:tipo',
+        component: ExamenComponent
+    },
+    {   path: '**', redirectTo: 'main'},
 ];

@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CursoCard } from "../curso-card/curso-card.component";
 
 @Component({
   selector: 'app-cursos',
   standalone: true,
   templateUrl: './cursos.component.html',
-  styleUrls: ['./cursos.component.css']
+  styleUrls: ['./cursos.component.css'],
+  imports: [CursoCard]
 })
 export class CursosComponent {
 
