@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProblemasService } from '../services/problemas/problemas.service';
+import { ProblemasService } from '../../services/problemas/problemas.service';
 import { Problema } from '../../entities/problema';
 import { NgFor } from '@angular/common';
 import { MathjaxPipe } from '../pipes/latex.pipe';
