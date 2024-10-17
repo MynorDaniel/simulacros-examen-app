@@ -15,9 +15,9 @@ import org.apache.tomcat.jdbc.pool.PoolProperties;
  */
 public class ConexionDB {
     
-    private static final String URL_MYSQL = "jdbc:mysql://localhost:3306/EXAMENESBD";
+    private static final String URL_MYSQL = "jdbc:mysql://localhost:3306/SIMULACROSAPP";
     private static final String USER = "root";
-    private static final String PASSWORD = "mynordma";
+    private static final String PASSWORD = "mynordma1";
 
     private static ConexionDB conexion;
 
