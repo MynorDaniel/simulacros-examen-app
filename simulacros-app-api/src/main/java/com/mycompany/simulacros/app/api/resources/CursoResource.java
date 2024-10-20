@@ -10,7 +10,7 @@ import jakarta.ws.rs.core.*;
 
 /**
  *
- * @author nombre
+ * @author mynordma
  */
 @Path("curso")
 public class CursoResource {
