@@ -1,0 +1,30 @@
+CREATE SCHEMA SIMULACROSAPP;
+
+USE SIMULACROSAPP;
+
+CREATE TABLE division (
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    CONSTRAINT pk_division PRIMARY KEY (nombre)
+);
+
+CREATE TABLE carrera (
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    division VARCHAR(100) NOT NULL,
+    CONSTRAINT pk_carrera PRIMARY KEY (nombre),
+    CONSTRAINT fk_carrera_division FOREIGN KEY (division) REFERENCES division(nombre)
+);
+
+CREATE TABLE curso (
+    nombre VARCHAR(100) NOT NULL,
+    carrera VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    division VARCHAR(100) NOT NULL,
+    imagen LONGBLOB ,
+    CONSTRAINT pk_curso PRIMARY KEY (nombre, carrera),
+    CONSTRAINT fk_curso_carrera FOREIGN KEY (carrera) REFERENCES carrera(nombre),
+    CONSTRAINT fk_curso_division FOREIGN KEY (division) REFERENCES division(nombre)
+);
+
+
