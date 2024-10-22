@@ -1,0 +1,20 @@
+<div class="py-1 pb-10 dark:bg-gray-900 bg-white">
+    <div class=" w-full px-6 md:px-12">
+        <div>
+            <h2
+            class="mt-0 text-2xl text-gray-900 to-red-500 pb-3 dark:text-white font-bold md:text-4xl lg:text-6xl lg:mt-4 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-[10%] mx-auto" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72L5.18 9L12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z" />
+            </svg>
+                {{division}}</h2>
+            <h2
+                class="mt-0 text-2xl text-gray-900 border-b to-red-500 pb-3 dark:text-white font-bold md:text-4xl lg:text-6xl lg:mt-4 text-center">
+                Carreras</h2>
+        </div>
+        <div class="w-full h-auto grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2">
+            @for (carrera of carreras; track $index) {
+            <app-carrera-card [carrera]="carrera"></app-carrera-card>
+            }
+        </div>
+    </div>
+</div>
