@@ -10,10 +10,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @author mynordma
+ * @author Cristian, Eduardo
  */
 public class CursoController {
-
+  
     //Confio en que el segundo método sea el correcto, pero por si acaso puse 2.
     
     /*
@@ -39,4 +39,34 @@ public class CursoController {
         }
     }
     */
+    public boolean recibirCurso(Curso curso) {
+        if (curso == null
+                || curso.getNombre() == null
+                || curso.getCarrera() == null
+                || curso.getDivision() == null
+                || curso.getDescripcion() == null) {
+            return false;
+        }
+        
+        if (curso.getNombre().isEmpty() || 
+            curso.getCarrera().isEmpty() || 
+            curso.getDivision().isEmpty() || 
+            curso.getDescripcion().isEmpty()) {
+            return false;
+        }
+        
+        if (curso.getNombre().length() > 99 || 
+            curso.getCarrera().length() > 99 || 
+            curso.getDivision().length() > 99) {
+            return false;
+        }
+        
+        /*try {
+                CursoDB cursoDB = new CursoDB();
+                cursoDB.crearCurso(curso);
+        } catch (SQLException e) {
+            return false;
+        }*/
+        return true;
+    }
 }
