@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author mynordma
+ * @author Eduardo, Cristian
  */
 public class CursoController {
 
