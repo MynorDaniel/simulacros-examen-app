@@ -5,30 +5,17 @@
 package com.mycompany.simulacros.app.api.controllers;
 
 import com.mycompany.simulacros.app.api.models.Curso;
+import com.mycompany.simulacros.app.api.services.CursoDB;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 
 /**
  *
  * @author Cristian, Eduardo
  */
 public class CursoController {
-  
-    //Confio en que el segundo método sea el correcto, pero por si acaso puse 2.
-    
-    /*
-    public Curso[] obtenerCursos() {
-        try {
-            ArrayList<Curso> listaDeCursos = CursoDB.obtenerCursos();
-            Curso[] cursos = (Curso[]) listaDeCursos.toArray();
-            return cursos;
-        } catch (SQLException e) {
-            return null;
-        }
-    }
-    */
  
-    /*
+    
     public Curso[] obtenerCursos() {
         try {
             CursoDB cursoDB = new CursoDB();
@@ -38,8 +25,8 @@ public class CursoController {
             return null;
         }
     }
-    */
-    public boolean recibirCurso(Curso curso) {
+    
+    public boolean crearCurso(Curso curso) {
         if (curso == null
                 || curso.getNombre() == null
                 || curso.getCarrera() == null
@@ -61,12 +48,16 @@ public class CursoController {
             return false;
         }
         
-        /*try {
+        try {
                 CursoDB cursoDB = new CursoDB();
                 cursoDB.crearCurso(curso);
         } catch (SQLException e) {
             return false;
-        }*/
+        }
         return true;
+    }
+
+    public boolean actualizarImagen(String nombre, String carrera, FormDataBodyPart part) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
