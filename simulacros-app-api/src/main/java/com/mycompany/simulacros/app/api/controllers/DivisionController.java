@@ -4,11 +4,21 @@
  */
 package com.mycompany.simulacros.app.api.controllers;
 
+import com.mycompany.simulacros.app.api.models.Division;
+
 /**
  *
  * @author mynordma
  */
 public class DivisionController {
+
+    public boolean crearDivision(Division division) {
+        return true;
+    }
+
+    public Division[] obtenerDivisiones() {
+        return null;
+    }
     
     
 }
