@@ -1,19 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { Curso } from '../../entities/Curso';
 
 @Component({
     selector: 'app-curso-card',
     standalone: true,
-    imports: [],
+    imports: [RouterLink],
     templateUrl: './curso-card.component.html',
   })
   export class CursoCard {
-    @Input({required: true}) curso: string = "";
-    @Input({required: true}) tipo: string = "";
+    @Input({required: true}) curso!: Curso;
 
     constructor(private router: Router) {}
-
-    navigateTo(curso: string, tipo: string) {
-        this.router.navigate(['examen', curso, tipo]);
-      }
   }
