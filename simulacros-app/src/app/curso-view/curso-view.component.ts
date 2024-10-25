@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { cursosTest } from '../../entities/curso-test';
+import { cursosTest } from '../../entities/tests/curso-test';
 import { Curso } from '../../entities/Curso';
 import { CursoCard } from '../curso-card/curso-card.component';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-curso-view',
@@ -16,7 +17,7 @@ export class CursoViewComponent implements OnInit{
   carrera!: string;
   division!: string;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit() {
     const paramDivision = this.route.snapshot.paramMap.get('division');
@@ -27,6 +28,7 @@ export class CursoViewComponent implements OnInit{
     if (paramCarrera){
       this.carrera = paramCarrera;
     }
+    this.titleService.setTitle(paramCarrera!);
     //Traer carreras en base a la division
  }
 }

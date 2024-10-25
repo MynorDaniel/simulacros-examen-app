@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Division } from '../../entities/Division';
-import { divisionTest } from '../../entities/division-test';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -11,6 +10,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './division-card.component.css'
 })
 export class DivisionCardComponent {
-
   @Input({required: true}) division!: Division;
 }

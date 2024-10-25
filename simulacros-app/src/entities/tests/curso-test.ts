@@ -1,4 +1,4 @@
-import { Curso } from "./Curso";
+import { Curso } from "../Curso";
 
 export const cursosTest: Curso[] = [
     {

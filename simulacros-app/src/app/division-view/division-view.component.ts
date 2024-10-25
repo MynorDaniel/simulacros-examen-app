@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Division } from '../../entities/Division';
-import { divisionTest } from '../../entities/division-test';
+import { divisionTest } from '../../entities/tests/division-test';
 import { DivisionCardComponent } from '../division-card/division-card.component';
 
 @Component({

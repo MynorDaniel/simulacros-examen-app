@@ -1,4 +1,4 @@
-import { Division } from "./Division";
+import { Division } from "../Division";
 
 export const divisionTest: Division[] = [
     {

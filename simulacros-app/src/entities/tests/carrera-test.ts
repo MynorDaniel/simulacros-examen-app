@@ -1,4 +1,4 @@
-import { Carrera } from "./Carrera";
+import { Carrera } from "../Carrera";
 
 export const carrerasTest: Carrera[] = [
     {
