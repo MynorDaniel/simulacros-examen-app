@@ -6,17 +6,29 @@ package com.mycompany.simulacros.app.api.controllers;
 
 import com.mycompany.simulacros.app.api.models.Curso;
 import java.io.InputStream;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import com.mycompany.simulacros.app.api.services.CursoDB;
+import java.sql.SQLException;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 
 /**
  *
- * @author mynordma
+ * @author Cristian, Eduardo
  */
 public class CursoController {
-
-    public boolean recibirCurso(Curso curso) {
+ 
+    
+    public Curso[] obtenerCursos() {
+        try {
+            CursoDB cursoDB = new CursoDB();
+            Curso[] cursos = (Curso[]) cursoDB.obtenerCursos().toArray();
+            return cursos;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+    
+    public boolean crearCurso(Curso curso) {
         if (curso == null
                 || curso.getNombre() == null
                 || curso.getCarrera() == null
@@ -37,13 +49,13 @@ public class CursoController {
                 || curso.getDivision().length() > 99) {
             return false;
         }
-
-        /*try {
+        
+        try {
                 CursoDB cursoDB = new CursoDB();
                 cursoDB.crearCurso(curso);
         } catch (SQLException e) {
             return false;
-        }*/
+        }
         return true;
     }
 

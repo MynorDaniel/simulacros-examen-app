@@ -4,11 +4,21 @@
  */
 package com.mycompany.simulacros.app.api.controllers;
 
+import com.mycompany.simulacros.app.api.models.Carrera;
+
 /**
  *
  * @author mynordma
  */
 public class CarreraController {
+
+    public boolean crearCarrera(Carrera carrera) {
+        return true;
+    }
+
+    public Carrera[] obtenerCarreras() {
+        return null;
+    }
     
     
     

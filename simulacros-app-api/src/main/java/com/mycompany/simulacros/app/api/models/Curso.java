@@ -9,6 +9,7 @@ package com.mycompany.simulacros.app.api.models;
  * @author mynordma
  */
 public class Curso {
+
     private String nombre;
     private String carrera;
     private String division;
@@ -20,8 +21,9 @@ public class Curso {
         this.division = division;
         this.descripcion = descripcion;
     }
-    
-    public Curso(){}
+
+    public Curso() {
+    }
 
     public String getNombre() {
         return nombre;
@@ -54,6 +56,4 @@ public class Curso {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    
 }
