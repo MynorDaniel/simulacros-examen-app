@@ -16,6 +16,7 @@ import org.glassfish.jersey.media.multipart.FormDataBodyPart;
  * @author Cristian, Eduardo
  */
 public class CursoController {
+
  
     
     public Curso[] obtenerCursos() {
@@ -27,6 +28,7 @@ public class CursoController {
             return null;
         }
     }
+
     
     public boolean crearCurso(Curso curso) {
         if (curso == null
@@ -49,10 +51,11 @@ public class CursoController {
                 || curso.getDivision().length() > 99) {
             return false;
         }
+
         
         try {
-                CursoDB cursoDB = new CursoDB();
-                cursoDB.crearCurso(curso);
+              CursoDB cursoDB = new CursoDB();
+              cursoDB.crearCurso(curso);
         } catch (SQLException e) {
             return false;
         }
