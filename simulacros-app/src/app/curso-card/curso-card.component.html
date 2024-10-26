@@ -1,70 +1,22 @@
-<div class="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-    <div class="relative p-8 space-y-8">
-        <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/burger.png" class="w-10" width="512" height="512" alt="burger illustration">
-        
-        <div class="space-y-2">
-            <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">First feature</h5>
-            <p class="text-sm text-gray-600">Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.</p>
-        </div>
-        <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
-            <span class="text-sm">Read more</span>
-            <span class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
-        </a>
+<a [routerLink]="'/cursos/' + curso.division + '/' + curso.carrera + '/' + curso.nombre"
+    class="group grid-cols-1 grid mt-20 mx-10 dark:bg-gray-700 dark:border-none bg-white w-auto border-4 border-gray-300 rounded-3xl hover:bg-red-600 hover:border-none hover:scale-105 transition-all duration-300">
+    <div class="group w-full text-center mt-2">
+        <span class="text-gray-700 text-lg dark:text-gray-300 group-hover:text-white">{{curso.division}} ->
+            {{curso.carrera}}</span>
     </div>
-</div>
-<div class="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-    <div class="relative p-8 space-y-8">
-        <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/burger.png" class="w-10" width="512" height="512" alt="burger illustration">
-        
-        <div class="space-y-2">
-            <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">First feature</h5>
-            <p class="text-sm text-gray-600">Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.</p>
-        </div>
-        <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
-            <span class="text-sm">Read more</span>
-            <span class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
-        </a>
+    <div
+        class="group-hover:bg-white w-1/2 my-16 mx-auto text-white ring-4 ring-white bg-red-600 rounded-full group-hover:scale-110 transition-transform duration-500">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+            class="group-hover:text-red-600 text-white m-4 transition-colors duration-500" viewBox="0 0 24 24"
+            viewBox="0 0 32 32">
+            <path fill="currentColor"
+                d="M24 30H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16.618l-5-2.5l-5 2.5V4H8v24h16v-4h2v4a2.003 2.003 0 0 1-2 2m-3-14.118l3 1.5V4h-6v13.382Z" />
+        </svg>
     </div>
-</div>
-<div class="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-    <div class="relative p-8 space-y-8">
-        <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/trowel.png" class="w-10" width="512" height="512" alt="burger illustration">
-        
-        <div class="space-y-2">
-            <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">Second feature</h5>
-            <p class="text-sm text-gray-600">Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.</p>
-        </div>
-        <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
-            <span class="text-sm">Read more</span>
-            <span class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
-        </a>
+    <div class="mx-auto">
+        <h1 class="text-center text-2xl text-red-600 mb-8 uppercase group-hover:text-white transition-colors">
+            {{curso.nombre}}
+        </h1>
     </div>
-</div>
-<div class="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-    <div class="relative p-8 space-y-8">
-        <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/package-delivery.png" class="w-10" width="512" height="512" alt="burger illustration">
-        
-        <div class="space-y-2">
-            <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">Third feature</h5>
-            <p class="text-sm text-gray-600">Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.</p>
-        </div>
-        <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
-            <span class="text-sm">Read more</span>
-            <span class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
-        </a>
-    </div>
-</div>
-<div class="relative group bg-gray-100 transition hover:z-[1] hover:shadow-2xl lg:hidden xl:block">
-    <div class="relative p-8 space-y-8 border-dashed rounded-lg transition duration-300 group-hover:bg-white group-hover:border group-hover:scale-90">
-        <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/metal.png" class="w-10" width="512" height="512" alt="burger illustration">
-        
-        <div class="space-y-2">
-            <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">More features</h5>
-            <p class="text-sm text-gray-600">Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.</p>
-        </div>
-        <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
-            <span class="text-sm">Read more</span>
-            <span class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
-        </a>
-    </div>
-</div>
+</a>

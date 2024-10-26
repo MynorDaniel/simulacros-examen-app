@@ -9,9 +9,10 @@ import com.mycompany.simulacros.app.api.services.CarreraDB;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 /**
  *
- * @author mynordma
+ * @author Cristian
  */
 public class CarreraController {
 

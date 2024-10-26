@@ -9,6 +9,7 @@ export class ProblemasService {
 
   constructor(private http: HttpClient) {}
 
+  
   public obtenerContenidoArchivo(url: string): Observable<string> {
     return this.http.get(url, { responseType: 'text' });
   }

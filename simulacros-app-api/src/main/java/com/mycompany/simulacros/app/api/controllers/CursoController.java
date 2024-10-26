@@ -5,8 +5,11 @@
 package com.mycompany.simulacros.app.api.controllers;
 
 import com.mycompany.simulacros.app.api.models.Curso;
-import java.sql.SQLException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import com.mycompany.simulacros.app.api.services.CursoDB;
+import java.sql.SQLException;
+import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 
 /**
  *
@@ -14,19 +17,20 @@ import java.util.ArrayList;
  */
 public class CursoController {
 
-    /*
+ 
+    
     public Curso[] obtenerCursos() {
         try {
-            ArrayList<Curso> listaDeCursos = CursoDB.obtenerCursos();
-            Curso[] cursos = listaDeCursos.toArray(new Curso[listaDeCursos.size()]);
+            CursoDB cursoDB = new CursoDB();
+            Curso[] cursos = (Curso[]) cursoDB.obtenerCursos().toArray();
             return cursos;
         } catch (SQLException e) {
             return null;
         }
     }
-    */
+
     
-    public boolean recibirCurso(Curso curso) {
+    public boolean crearCurso(Curso curso) {
         if (curso == null
                 || curso.getNombre() == null
                 || curso.getCarrera() == null
@@ -48,12 +52,61 @@ public class CursoController {
             return false;
         }
 
-        /*try {
-                CursoDB cursoDB = new CursoDB();
-                cursoDB.crearCurso(curso);
+        
+        try {
+              CursoDB cursoDB = new CursoDB();
+              cursoDB.crearCurso(curso);
         } catch (SQLException e) {
             return false;
-        }*/
+        }
         return true;
     }
+
+    public boolean actualizarImagen(String nombre, String carrera, FormDataBodyPart part) {
+        
+        if (nombre.length() > 99 || carrera.length() > 99) {
+            return false;
+        }
+
+        if (part != null) {
+            String formato = part.getMediaType().toString();
+            if (!formatoCorrecto(formato)) {
+                return false;
+            }
+        }else{
+            return false;
+        }
+        
+        long tamañoMaximo = 100*1024*1024;
+        long tamañoArchivo = part.getContentDisposition().getSize();
+        if(tamañoArchivo >= tamañoMaximo){
+            return false;
+        }
+        
+        /*
+        try (InputStream inputStream = part.getValueAs(InputStream.class)){
+            CursoDB cursoDB = new CursoDB();
+            cursoDB.actualizarImagen(nombre, carrera, inputStream);
+            
+        } catch (SQLException e) {
+            return false;
+        }
+        */
+        
+        return true;
+    }
+
+    public boolean formatoCorrecto(String formato) {
+        String[] formatos = new String[3];
+        formatos[0] = "image/png";
+        formatos[1] = "image/jpeg";
+        formatos[2] = "image/jpg";
+        for (int i = 0; i < formatos.length; i++) {
+            if (formatos[i].equals(formato)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
