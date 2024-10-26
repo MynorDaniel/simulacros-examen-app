@@ -16,35 +16,32 @@ import java.util.ArrayList;
  */
 public class CarreraController {
 
-    CarreraDB carreraDB = new CarreraDB();
+    private final CarreraDB carreraDB = new CarreraDB();
 
     /**
      * Método encargado de verificar si el nombre de la carrera o de la división
      * son aceptables, de serlos crea una carrera con el nombre
      *
-     * @param nombreCarrera Nombre que recibirá la carrera.
-     * @param nombreDivision Nombre que recibirá la división a la que pertenece
-     * la carrera.
+     * @param carrera
      * @return true si se crea la carrera, false si no se creó.
-     * @throws SQLException Si ocurrió un error al crear la carrera en la clase
-     * CarreraDB.
      */
-    public boolean crearCarrera(String nombreCarrera, String nombreDivision) throws SQLException {
-        if (nombreCarrera.length() > 99 || nombreDivision.length() > 99) {
+    public boolean crearCarrera(Carrera carrera) {
+        if (carrera.getNombre().length() > 99 || carrera.getDivision().length() > 99) {
             return false;
         }
         try {
-            carreraDB.crearCarrera(nombreCarrera);
+            carreraDB.crearCarrera(carrera);
             return true;
         } catch (SQLException e) {
             return false;
         }
     }
 
-    /*
+    /**
      * Método encargado de retornar las carreras existentes.
      *
      * @return carrerasDisponibles : Un arreglo con las carreras creadas.
+     */
     public Carrera[] obtenerCarreras() {
         Carrera[] carrerasDisponibles;
         try {
@@ -55,5 +52,5 @@ public class CarreraController {
             return null;
         }
     }
-     */
+     
 }

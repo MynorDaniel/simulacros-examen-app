@@ -15,18 +15,18 @@ import java.util.ArrayList;
  */
 public class DivisionController {
 
-    private DivisionDB divisionDB;
+    private final DivisionDB divisionDB;
 
     public DivisionController() {
         this.divisionDB = new DivisionDB();
     }
 
-    public boolean crearDivision(String nombre) {
-        if (nombre.length() > 99) {
+    public boolean crearDivision(Division division) {
+        if (division.getNombre().length() > 99) {
             return false;
         } else {
             try {
-                divisionDB.crearDivision(nombre);
+                divisionDB.crearDivision(division);
             } catch (SQLException e) {
                 return false;
             }
@@ -34,7 +34,7 @@ public class DivisionController {
         return true;
     }
 
-    /*
+    
     public Division[] obtenerDivisiones() {
         try {
             ArrayList<Division> divisionesList = divisionDB.obtenerDivisiones();
@@ -47,5 +47,5 @@ public class DivisionController {
             return null;
         }
     }
-    */
+    
 }

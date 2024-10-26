@@ -8,7 +8,6 @@ import com.mycompany.simulacros.app.api.controllers.CursoController;
 import com.mycompany.simulacros.app.api.models.Curso;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
-import java.io.InputStream;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
 

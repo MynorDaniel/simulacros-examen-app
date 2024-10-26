@@ -6,9 +6,12 @@ package com.mycompany.simulacros.app.api.controllers;
 
 import com.mycompany.simulacros.app.api.models.Curso;
 import java.io.InputStream;
-import java.util.ArrayList;
 import com.mycompany.simulacros.app.api.services.CursoDB;
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 
 /**
@@ -16,18 +19,18 @@ import org.glassfish.jersey.media.multipart.FormDataBodyPart;
  * @author Cristian, Eduardo
  */
 public class CursoController {
-
- 
     
     public Curso[] obtenerCursos() {
         try {
             CursoDB cursoDB = new CursoDB();
-            Curso[] cursos = (Curso[]) cursoDB.obtenerCursos().toArray();
+            ArrayList<Curso> listaCursos = cursoDB.obtenerCursos();
+            Curso[] cursos = listaCursos.toArray(Curso[]::new);
             return cursos;
         } catch (SQLException e) {
             return null;
         }
     }
+
 
     
     public boolean crearCurso(Curso curso) {
@@ -83,15 +86,16 @@ public class CursoController {
             return false;
         }
         
-        /*
+        
         try (InputStream inputStream = part.getValueAs(InputStream.class)){
             CursoDB cursoDB = new CursoDB();
             cursoDB.actualizarImagen(nombre, carrera, inputStream);
             
         } catch (SQLException e) {
             return false;
+        } catch (IOException ex) {
+            Logger.getLogger(CursoController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        */
         
         return true;
     }
