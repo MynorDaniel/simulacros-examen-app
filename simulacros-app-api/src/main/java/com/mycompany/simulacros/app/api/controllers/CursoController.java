@@ -13,32 +13,19 @@ import java.util.ArrayList;
  * @author Cristian, Eduardo
  */
 public class CursoController {
-  
-    //Confio en que el segundo método sea el correcto, pero por si acaso puse 2.
-    
+
     /*
     public Curso[] obtenerCursos() {
         try {
             ArrayList<Curso> listaDeCursos = CursoDB.obtenerCursos();
-            Curso[] cursos = (Curso[]) listaDeCursos.toArray();
+            Curso[] cursos = listaDeCursos.toArray(new Curso[listaDeCursos.size()]);
             return cursos;
         } catch (SQLException e) {
             return null;
         }
     }
     */
- 
-    /*
-    public Curso[] obtenerCursos() {
-        try {
-            CursoDB cursoDB = new CursoDB();
-            Curso[] cursos = (Curso[]) cursoDB.obtenerCursos().toArray();
-            return cursos;
-        } catch (SQLException e) {
-            return null;
-        }
-    }
-    */
+    
     public boolean recibirCurso(Curso curso) {
         if (curso == null
                 || curso.getNombre() == null
@@ -47,20 +34,20 @@ public class CursoController {
                 || curso.getDescripcion() == null) {
             return false;
         }
-        
-        if (curso.getNombre().isEmpty() || 
-            curso.getCarrera().isEmpty() || 
-            curso.getDivision().isEmpty() || 
-            curso.getDescripcion().isEmpty()) {
+
+        if (curso.getNombre().isEmpty()
+                || curso.getCarrera().isEmpty()
+                || curso.getDivision().isEmpty()
+                || curso.getDescripcion().isEmpty()) {
             return false;
         }
-        
-        if (curso.getNombre().length() > 99 || 
-            curso.getCarrera().length() > 99 || 
-            curso.getDivision().length() > 99) {
+
+        if (curso.getNombre().length() > 99
+                || curso.getCarrera().length() > 99
+                || curso.getDivision().length() > 99) {
             return false;
         }
-        
+
         /*try {
                 CursoDB cursoDB = new CursoDB();
                 cursoDB.crearCurso(curso);
