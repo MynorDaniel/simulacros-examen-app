@@ -52,5 +52,15 @@ public class CarreraController {
             return null;
         }
     }
+
+    public Carrera[] obtenerCarrera(String division) {
+        Carrera[] carreras;
+        try {
+            carreras = carreraDB.obtenerCarreras(division);
+            return carreras;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
      
 }

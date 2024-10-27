@@ -41,4 +41,13 @@ public class CursoResource {
         CursoController cursoController = new CursoController();
         return cursoController.actualizarImagen(nombre, carrera, part) ? Response.status(Response.Status.OK).build() : Response.status(Response.Status.BAD_REQUEST).build();
     }
+    
+    @GET
+    @Path("/{carrera}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response obtenerCarreraPorDivision(@PathParam("carrera") String carrera){
+        CursoController cursoController = new CursoController();
+        Curso[] cursos = cursoController.obtenerCursos(carrera);
+        return cursos != null ? Response.ok(cursos).build() : Response.status(Response.Status.BAD_REQUEST).build();
+    }
 }

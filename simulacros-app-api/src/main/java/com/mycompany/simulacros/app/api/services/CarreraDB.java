@@ -8,6 +8,7 @@ import com.mycompany.simulacros.app.api.bd.ConexionDB;
 import com.mycompany.simulacros.app.api.models.Carrera;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -56,5 +57,29 @@ public class CarreraDB {
         }
 
         return listaDeCarreras;
+    }
+    
+    public Carrera[] obtenerCarreras(String division) throws SQLException {
+        String query = "SELECT nombre, descripcion, division FROM carrera WHERE division = ?";
+        
+        List<Carrera> carreras = new ArrayList<>();
+        
+        try (Connection conn = ConexionDB.getInstance().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+             
+            stmt.setString(1, division);
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String descripcion = rs.getString("descripcion");
+                String divisionDb = rs.getString("division");
+                
+                Carrera carrera = new Carrera(nombre, descripcion, divisionDb);
+                carreras.add(carrera);
+            }
+        }
+        
+        return carreras.toArray(Carrera[]::new);
     }
 }

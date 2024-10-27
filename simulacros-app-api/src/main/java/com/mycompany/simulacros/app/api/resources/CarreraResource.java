@@ -30,4 +30,13 @@ public class CarreraResource {
         Carrera[] carreras = carreraController.obtenerCarreras();
         return carreras != null ? Response.ok(carreras).build() : Response.status(Response.Status.BAD_REQUEST).build();
     }
+    
+    @GET
+    @Path("/{division}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response obtenerCarreraPorDivision(@PathParam("division") String division){
+        CarreraController carreraController = new CarreraController();
+        Carrera[] carreras = carreraController.obtenerCarrera(division);
+        return carreras != null ? Response.ok(carreras).build() : Response.status(Response.Status.BAD_REQUEST).build();
+    }
 }

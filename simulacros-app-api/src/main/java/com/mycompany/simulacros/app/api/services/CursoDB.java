@@ -9,6 +9,7 @@ import com.mycompany.simulacros.app.api.models.Curso;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -78,5 +79,30 @@ public class CursoDB {
             System.out.println("Mensaje de error: " + e.getMessage());
             throw new SQLException("Error al actualizar la imagen del curso: " + e.getMessage());
         }
+    }
+    
+    public Curso[] obtenerCursos(String carrera) throws SQLException {
+        String query = "SELECT nombre, carrera, division, descripcion FROM curso WHERE carrera = ?";
+
+        List<Curso> cursos = new ArrayList<>();
+
+        try (Connection conn = ConexionDB.getInstance().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, carrera);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String carreraDb = rs.getString("carrera");
+                String division = rs.getString("division");
+                String descripcion = rs.getString("descripcion");
+
+                Curso curso = new Curso(nombre, carreraDb, division, descripcion);
+                cursos.add(curso);
+            }
+        }
+
+        return cursos.toArray(Curso[]::new);
     }
 }
