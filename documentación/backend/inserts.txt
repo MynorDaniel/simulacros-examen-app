@@ -1,0 +1,115 @@
+INSERT INTO division (nombre, descripcion) VALUES
+('División de Ciencias de la Ingeniería', 'Se enfoca en la formación de ingenieros en diversas áreas como mecánica, civil y sistemas, promoviendo la innovación y el desarrollo tecnológico.'),
+('División de Ciencias Médicas', 'Especializada en la enseñanza y práctica de ciencias de la salud, abarcando desde medicina general hasta especialidades clínicas.'),
+('División de Ciencias Económicas', 'Proporciona conocimientos y habilidades en economía, contabilidad y administración para fomentar el análisis financiero y la toma de decisiones en el ámbito empresarial.'),
+('División de Humanidades y Ciencias Sociales', 'Se dedica al estudio del comportamiento humano, la cultura y las ciencias sociales, preparando profesionales en áreas como psicología, sociología y trabajo social.'),
+('División de Arquitectura', 'Forma a profesionales en el diseño, planificación y construcción de espacios arquitectónicos, promoviendo la creatividad y la funcionalidad en los proyectos de construcción.');
+
+INSERT INTO carrera (nombre, descripcion, division) VALUES
+('Ingeniería en Ciencias y Sistemas', 'Formación en tecnologías de la información, desarrollo de software y gestión de sistemas computacionales.', 'División de Ciencias de la Ingeniería'),
+('Ingeniería Civil', 'Carrera enfocada en el diseño, construcción y mantenimiento de infraestructuras civiles, como carreteras, puentes y edificios.', 'División de Ciencias de la Ingeniería'),
+('Ingeniería Mecánica', 'Programa de estudios en el análisis, diseño y fabricación de sistemas mecánicos y equipos industriales.', 'División de Ciencias de la Ingeniería'),
+('Ingeniería Industrial', 'Carrera orientada a la optimización de procesos industriales, gestión de producción y logística.', 'División de Ciencias de la Ingeniería'),
+('Ingeniería Mecánica Industrial', 'Combinación de conocimientos en mecánica y gestión industrial para mejorar procesos y sistemas productivos.', 'División de Ciencias de la Ingeniería');
+
+INSERT INTO carrera (nombre, descripcion, division) VALUES
+('Médico y Cirujano', 'Formación integral en ciencias médicas para el diagnóstico, tratamiento y prevención de enfermedades, con énfasis en la práctica clínica y quirúrgica.', 'División de Ciencias Médicas');
+
+INSERT INTO carrera (nombre, descripcion, division) VALUES
+('Licenciatura en Economía', 'Estudio de los principios económicos, análisis de datos y políticas que afectan la economía a nivel local e internacional.', 'División de Ciencias Económicas'),
+('Licenciatura en Administración de Empresas', 'Formación en gestión, organización y administración de empresas, con énfasis en estrategias de negocio y liderazgo.', 'División de Ciencias Económicas'),
+('Licenciatura en Auditoría y Contaduría Pública', 'Preparación profesional en auditoría, contabilidad y finanzas, con enfoque en la regulación y ética contable.', 'División de Ciencias Económicas');
+
+INSERT INTO carrera (nombre, descripcion, division) VALUES
+('Licenciatura en Pedagogía', 'Formación en teorías y prácticas educativas, preparación para la enseñanza y el desarrollo del aprendizaje.', 'División de Humanidades y Ciencias Sociales'),
+('Licenciatura en Psicología', 'Estudio del comportamiento humano, la mente y los procesos psicológicos, con enfoque en la salud mental y el bienestar.', 'División de Humanidades y Ciencias Sociales'),
+('Licenciatura en Trabajo Social', 'Preparación profesional para intervenir y ayudar a individuos y comunidades en situaciones de vulnerabilidad.', 'División de Humanidades y Ciencias Sociales');
+
+INSERT INTO carrera (nombre, descripcion, division) VALUES
+('Arquitectura', 'Formación en el diseño y la planificación de espacios, estructuras y ambientes, combinando creatividad y técnica.', 'División de Arquitectura');
+
+INSERT INTO carrera (nombre, descripcion, division) VALUES
+('Área Común Ingeniería', 'Programa formativo que brinda una base sólida en ciencias y matemáticas, preparando a los estudiantes para especializarse en diferentes áreas de la ingeniería.', 'División de Ciencias de la Ingeniería');
+
+INSERT INTO carrera (nombre, descripcion, division) VALUES 
+('Admisión Ingeniería', 'Admisión para la carrera de Ingeniería que evalúa a los estudiantes en fundamentos esenciales de matemáticas y ciencias.', 'Division de Ciencias de la Ingenieria');
+
+INSERT INTO curso (nombre, carrera, descripcion, division) VALUES 
+('Básico de matemática', 'Admisión Ingeniería', 'Abarca los temas de las matemáticas básicas.', 'Division de Ciencias de la Ingenieria'),
+('Básico de física', 'Admisión Ingeniería', 'Abarca los temas de la física fundamental.', 'Division de Ciencias de la Ingenieria'),
+('Básico de lenguaje', 'Admisión Ingeniería', 'Abarca las habilidades básicas de lenguaje y comunicación.', 'Division de Ciencias de la Ingenieria'),
+('Específico de matemática', 'Admisión Ingeniería', 'Abarca las matemáticas más enfocadas al área de ingeniería.', 'Division de Ciencias de la Ingenieria'),
+('Específico de computación', 'Admisión Ingeniería', 'Se enfoca en temas básicos del área computacional.', 'Division de Ciencias de la Ingenieria'),
+('Matemática básica 1', 'Área Común Ingeniería', 'Curso de matemáticas básicas con énfasis en el precálculo.', 'Division de Ciencias de la Ingenieria'),
+('Matemática básica 2', 'Área Común Ingeniería', 'Curso de matemáticas básicas con énfasis en el cálculo.', 'Division de Ciencias de la Ingenieria'),
+('Matemática intermedia 1', 'Área Común Ingeniería', 'Curso intermedio de matemáticas.', 'Division de Ciencias de la Ingenieria'),
+('Matemática intermedia 2', 'Área Común Ingeniería', 'Curso intermedio de matemáticas enfocándose en el cálculo vectorial.', 'Division de Ciencias de la Ingenieria'),
+('Matemática intermedia 3', 'Área Común Ingeniería', 'Curso intermedio de matemáticas enfocándose en las ecuaciones diferenciales.', 'Division de Ciencias de la Ingenieria'),
+('Física básica', 'Área Común Ingeniería', 'Curso de física básica enfocándose en los primeros temas de la mecánica clásica.', 'Division de Ciencias de la Ingenieria'),
+('Física 1', 'Área Común Ingeniería', 'Curso de física con énfasis en la mecánica y dinámica rotaciónal, etc.', 'Division de Ciencias de la Ingenieria'),
+('Física 2', 'Área Común Ingeniería', 'Curso avanzado de física con énfasis en electromagnetísmo.', 'Division de Ciencias de la Ingenieria');
+
+INSERT INTO examen (nombre, curso, descripcion, tiempo, preguntas) VALUES
+('Exámen único', 'Básico de matemática', 'Conceptos básicos de matemática, incluyendo factorización y aritmética avanzada.', 50, 20),
+('Exámen único', 'Básico de física', 'Física fundamental, mecánica básica, y principios de movimiento.', 50, 20),
+('Exámen único', 'Básico de lenguaje', 'Lenguaje y la comunicación, enfocado en gramática y comprensión lectora.', 50, 20),
+('Exámen único', 'Específico de matemática', 'Álgebra básica, factorización, ecuaciones lineales y cuadráticas, con un enfoque a la ingeniería.', 50, 20),
+('Exámen único', 'Específico de computación', 'Conceptos básicos de computación, incluyendo hardware, software, y sistemas operativos.', 50, 20),
+
+('Primer examen parcial', 'Matemática básica 1', 'Operaciones algebráicas básicas, propiedades de los números reales, etc.', 50, 4),
+('Segundo examen parcial', 'Matemática básica 1', 'Funciones, gráficas, etc.', 50, 4),
+('Tercer examen parcial', 'Matemática básica 1', 'Modelado de ecuaciones, logaritmos y otros tipos de funciones.', 50, 4),
+('Examen final', 'Matemática básica 1', 'Integración de todos los temas tratados.', 50, 4),
+
+('Primer examen parcial', 'Matemática básica 2', 'Limites y continuidad.', 50, 4),
+('Segundo examen parcial', 'Matemática básica 2', 'Derivadas y sus aplicaciones.', 50, 4),
+('Tercer examen parcial', 'Matemática básica 2', 'Introducción al cálculo integral.', 50, 4),
+('Examen final', 'Matemática básica 2', 'Integración de todos los temas tratados.', 50, 4),
+
+('Primer examen parcial', 'Matemática intermedia 1', 'Técnicas de integración y aplicaciones de la integral', 50, 4),
+('Segundo examen parcial', 'Matemática intermedia 1', 'Álgebra lineal.', 50, 4),
+('Tercer examen parcial', 'Matemática intermedia 1', 'Vectores, series y sucesiones.', 50, 4),
+('Examen final', 'Matemática intermedia 1', 'Integración de todos los temas tratados.', 50, 4),
+
+('Primer examen parcial', 'Matemática intermedia 2', 'Funciones vectoriales.', 50, 4),
+('Segundo examen parcial', 'Matemática intermedia 2', 'Derivadas parciales y funciones de varias variables.', 50, 4),
+('Tercer examen parcial', 'Matemática intermedia 2', 'Integrales multiples.', 50, 4),
+('Examen final', 'Matemática intermedia 2', 'Integración de todos los temas tratados.', 50, 4),
+
+('Primer examen parcial', 'Matemática intermedia 3', 'Modelos matemáticos con ecuaciones diferenciales.', 50, 4),
+('Segundo examen parcial', 'Matemática intermedia 3', 'Técnicas para resolver ecuaciones diferenciales.', 50, 4),
+('Tercer examen parcial', 'Matemática intermedia 3', 'Ecuaciones diferenciales de orden superior.', 50, 4),
+('Examen final', 'Matemática intermedia 3', 'Integración de todos los temas tratados.', 50, 4),
+
+('Primer examen parcial', 'Física básica', 'Conceptos fundamentales de la física, incluyendo movimiento y fuerzas.', 50, 4),
+('Segundo examen parcial', 'Física básica', 'Energía y trabajo.', 50, 4),
+('Tercer examen parcial', 'Física básica', 'Choques.', 50, 4),
+('Examen final', 'Física básica', 'Integración de todos los temas tratados.', 50, 4),
+
+('Primer examen parcial', 'Física 1', 'Movimiento rotacional.', 50, 4),
+('Segundo examen parcial', 'Física 1', 'Equilibrio de cuerpos.', 50, 4),
+('Tercer examen parcial', 'Física 1', 'Movimiento armónico.', 50, 4),
+('Examen final', 'Física 1', 'Integración de todos los temas tratados.', 50, 4),
+
+('Primer examen parcial', 'Física 2', 'Cargas eléctricas y campo eléctrico.', 50, 4),
+('Segundo examen parcial', 'Física 2', 'Capacitancia y potencial eléctrico.', 50, 4),
+('Tercer examen parcial', 'Física 2', 'Corriente, resistencia y magnetismo.', 50, 4),
+('Examen final', 'Física 2', 'Integración de todos los temas tratados.', 50, 4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
