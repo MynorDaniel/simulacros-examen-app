@@ -1,5 +1,5 @@
 export interface Problema{
-    enunciado: string;
+    url: string;
     respuesta1: string;
     respuesta2: string;
     respuesta3: string;

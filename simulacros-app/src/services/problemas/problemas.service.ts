@@ -1,17 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Problema } from '../../entities/problema';
+import { Api_URL } from '../rest-constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProblemasService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   
-  public obtenerContenidoArchivo(url: string): Observable<string> {
-    return this.http.get(url, { responseType: 'text' });
+  public obtenerProblema(id: string): Observable<Problema> {
+    return this.httpClient.get<Problema>(Api_URL + "problema");
+  }
+
+  public obtenerProblemas(curso: string, carrera: string): Observable<Problema[]> {
+    return this.httpClient.get<Problema[]>(Api_URL + "problema/" + carrera + "/" + curso);
   }
 
 }
