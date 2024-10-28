@@ -7,6 +7,7 @@ package com.mycompany.simulacros.app.api.controllers;
 import com.mycompany.simulacros.app.api.models.Examen;
 import com.mycompany.simulacros.app.api.models.Pregunta;
 import com.mycompany.simulacros.app.api.models.PreguntaResponse;
+import com.mycompany.simulacros.app.api.models.Respuesta;
 import com.mycompany.simulacros.app.api.services.ExamenDB;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -56,11 +57,11 @@ public class ExamenController {
         return pr;
     }
 
-    public boolean obtenerRespuesta(String id, String respuesta) {
+    public boolean obtenerRespuesta(Respuesta respuesta) {
         ExamenDB examenDB = new ExamenDB();
         boolean respuestaCorrecta;
         try {
-            respuestaCorrecta = examenDB.respuestaCorrecta(Integer.parseInt(id), respuesta);
+            respuestaCorrecta = examenDB.respuestaCorrecta(respuesta.getId(), respuesta.getValor());
         } catch (SQLException e) {
             return false;
         }

@@ -20,7 +20,7 @@ export class PreguntasService {
   }
 
   public evaluarRespuesta(respuesta: Respuesta): Observable<void> {
-    return this.httpClient.get<void>(this.restConstants.getApiURL() + "respuesta/" + respuesta.id + "/" + respuesta.valor);
+    return this.httpClient.post<void>(this.restConstants.getApiURL() + "respuesta/", respuesta);
   }
 
 }
