@@ -10,23 +10,46 @@ package com.mycompany.simulacros.app.api.models;
  */
 public class Pregunta {
     
+    private int id;
     private String curso;
     private String tipo;
     private String respuestaCorrecta;
     private String respuestaIncorrecta1;
     private String respuestaIncorrecta2;
     private String respuestaIncorrecta3;
+    private String imagen;
 
-    public Pregunta(String curso, String tipo, String respuestaCorrecta, String respuestaIncorrecta1, String respuestaIncorrecta2, String respuestaIncorrecta3) {
+    public Pregunta(String curso, String tipo, String respuestaCorrecta, String respuestaIncorrecta1,
+            String respuestaIncorrecta2, String respuestaIncorrecta3, String imagen, int id) {
         this.curso = curso;
         this.tipo = tipo;
         this.respuestaCorrecta = respuestaCorrecta;
         this.respuestaIncorrecta1 = respuestaIncorrecta1;
         this.respuestaIncorrecta2 = respuestaIncorrecta2;
         this.respuestaIncorrecta3 = respuestaIncorrecta3;
+        this.id = id;
+        this.imagen = imagen;
     }
 
     public Pregunta() {}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    
+    
 
     public String getCurso() {
         return curso;

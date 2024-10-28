@@ -10,6 +10,9 @@ import com.mycompany.simulacros.app.api.models.Pregunta;
 import com.mycompany.simulacros.app.api.models.PreguntaResponse;
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
 
 /**
  *
@@ -47,10 +50,77 @@ public class ExamenDB {
         }
     }
 
-    public InputStream[] obtenerPreguntas(String curso, String tipo) throws SQLException {
-        return null;
+    public Pregunta[] obtenerPreguntas(String curso, String tipo) throws SQLException {
+        String query;
+        int limite = (tipo.equals("Examen único")) ? 20 : 4;
+
+        query = "SELECT id, imagen, curso, tipo, respuesta_correcta, respuesta_incorrecta1, respuesta_incorrecta2, respuesta_incorrecta3 " +
+                "FROM pregunta " +
+                "WHERE curso = ? AND tipo = ? " +
+                "ORDER BY RAND() " +
+                "LIMIT ?";
+
+        try (Connection connection = ConexionDB.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setString(1, curso);
+            preparedStatement.setString(2, tipo);
+            preparedStatement.setInt(3, limite);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<Pregunta> preguntasList = new ArrayList<>();
+
+            while (resultSet.next()) {
+                Pregunta pregunta = new Pregunta();
+                pregunta.setId(resultSet.getInt("id"));
+                pregunta.setCurso(resultSet.getString("curso"));
+                pregunta.setTipo(resultSet.getString("tipo"));
+                pregunta.setRespuestaCorrecta(resultSet.getString("respuesta_correcta"));
+                pregunta.setRespuestaIncorrecta1(resultSet.getString("respuesta_incorrecta1"));
+                pregunta.setRespuestaIncorrecta2(resultSet.getString("respuesta_incorrecta2"));
+                pregunta.setRespuestaIncorrecta3(resultSet.getString("respuesta_incorrecta3"));
+
+                byte[] imagenBytes = resultSet.getBytes("imagen");
+                if (imagenBytes != null) {
+                    String imagenBase64 = Base64.getEncoder().encodeToString(imagenBytes);
+                    pregunta.setImagen(imagenBase64);
+                } else {
+                    pregunta.setImagen("");
+                }
+
+                preguntasList.add(pregunta);
+            }
+
+            return preguntasList.toArray(Pregunta[]::new);
+        }
     }
 
+    public boolean respuestaCorrecta(int id, String respuesta) throws SQLException {
+        String query = "SELECT respuesta_correcta FROM pregunta WHERE id = ?";
+
+        try (Connection connection = ConexionDB.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setInt(1, id);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    String respuestaCorrecta = resultSet.getString("respuesta_correcta");
+                    return respuestaCorrecta.equals(respuesta);
+                } else {
+                    return false;
+                }
+            }catch(SQLException e){
+                System.out.println(e.getMessage());
+                return false;
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    
     public void guardarImagen(InputStream imagen, String id) throws SQLException {
         String sql = "UPDATE pregunta SET imagen = ? WHERE id = ?";
 

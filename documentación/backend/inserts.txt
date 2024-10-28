@@ -50,11 +50,11 @@ INSERT INTO curso (nombre, carrera, descripcion, division) VALUES
 ('Física 2', 'Área Común Ingeniería', 'Curso avanzado de física con énfasis en electromagnetísmo.', 'Division de Ciencias de la Ingenieria');
 
 INSERT INTO examen (nombre, curso, descripcion, tiempo, preguntas) VALUES
-('Exámen único', 'Básico de matemática', 'Conceptos básicos de matemática, incluyendo factorización y aritmética avanzada.', 50, 20),
-('Exámen único', 'Básico de física', 'Física fundamental, mecánica básica, y principios de movimiento.', 50, 20),
-('Exámen único', 'Básico de lenguaje', 'Lenguaje y la comunicación, enfocado en gramática y comprensión lectora.', 50, 20),
-('Exámen único', 'Específico de matemática', 'Álgebra básica, factorización, ecuaciones lineales y cuadráticas, con un enfoque a la ingeniería.', 50, 20),
-('Exámen único', 'Específico de computación', 'Conceptos básicos de computación, incluyendo hardware, software, y sistemas operativos.', 50, 20),
+('Examen único', 'Básico de matemática', 'Conceptos básicos de matemática, incluyendo factorización y aritmética avanzada.', 50, 20),
+('Examen único', 'Básico de física', 'Física fundamental, mecánica básica, y principios de movimiento.', 50, 20),
+('Examen único', 'Básico de lenguaje', 'Lenguaje y la comunicación, enfocado en gramática y comprensión lectora.', 50, 20),
+('Examen único', 'Específico de matemática', 'Álgebra básica, factorización, ecuaciones lineales y cuadráticas, con un enfoque a la ingeniería.', 50, 20),
+('Examen único', 'Específico de computación', 'Conceptos básicos de computación, incluyendo hardware, software, y sistemas operativos.', 50, 20),
 
 ('Primer examen parcial', 'Matemática básica 1', 'Operaciones algebráicas básicas, propiedades de los números reales, etc.', 50, 4),
 ('Segundo examen parcial', 'Matemática básica 1', 'Funciones, gráficas, etc.', 50, 4),
