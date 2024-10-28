@@ -32,26 +32,16 @@ public class ExamenResource {
     
     @GET
     @Path("/{curso}/{tipo}")
-    @Produces(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response obtenerPreguntas(@PathParam("curso") String curso, @PathParam("tipo") String tipo) {
         ExamenController examenController = new ExamenController();
-        InputStream[] imagenes = examenController.obtenerPreguntas(curso, tipo);
-        
-        if(imagenes == null){return Response.status(Response.Status.BAD_REQUEST).build();}
+        Pregunta[] preguntas = examenController.obtenerPreguntas(curso, tipo);
 
-        StreamingOutput output = (OutputStream outputStream) -> {
-            for (InputStream imagen : imagenes) {
-                byte[] buffer = new byte[4096];
-                int bytesRead;
-                while ((bytesRead = imagen.read(buffer)) != -1) {
-                    outputStream.write(buffer, 0, bytesRead);
-                }
-                outputStream.flush();
-                imagen.close();
-            }
-        };
+        if (preguntas == null || preguntas.length == 0) {
+            return Response.status(Response.Status.BAD_REQUEST).entity("No se encontraron preguntas").build();
+        }
 
-        return Response.ok(output).type(MediaType.APPLICATION_OCTET_STREAM).build();
+        return Response.ok(preguntas).build();
     }
     
     @PATCH
