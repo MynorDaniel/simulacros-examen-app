@@ -104,4 +104,9 @@ export class ExamenComponent implements OnInit {
   returnNotFound(){
     this.router.navigate(['/404']);
   }
+
+  goback(){
+    this.router.navigate(['..']);
+    this.scrollToTop();
+  }
 }
