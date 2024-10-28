@@ -18,7 +18,8 @@ export class ProblemaComponent implements OnInit{
     this.respuestas = [
       this.problema.respuesta1,
       this.problema.respuesta2,
-      this.problema.respuesta3
+      this.problema.respuesta3,
+      this.problema.respuesta4
   ]
   }
 

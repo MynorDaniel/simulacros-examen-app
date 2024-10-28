@@ -79,7 +79,9 @@ public class CarreraDB {
                 carreras.add(carrera);
             }
         }
-        
+        if (carreras.isEmpty()) {
+            throw new SQLException("No se encontraron carreras en base a " + division);
+        }
         return carreras.toArray(Carrera[]::new);
     }
 }

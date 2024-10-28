@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { Curso } from '../../../entities/Curso';
 
 @Component({
@@ -10,6 +10,4 @@ import { Curso } from '../../../entities/Curso';
   })
   export class CursoCard {
     @Input({required: true}) curso!: Curso;
-
-    constructor(private router: Router) {}
   }

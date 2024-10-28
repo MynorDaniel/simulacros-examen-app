@@ -7,7 +7,7 @@
         <input type="radio" value="1" class="peer hidden" [name]="respuestas" (click)="selectResponse(respuesta)">
         <div
             class="bg-white dark:bg-gray-900  hover:bg-slate-200 dark:hover:bg-gray-700 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm border-gray-200 group peer-checked:border-green-500">
-            <h2 class="font-medium text-gray-700 dark:text-white">{{respuesta}}</h2>
+            <h2 class="font-medium text-gray-700 dark:text-white"><b>{{$index + 1}})</b> {{respuesta}}</h2>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-9 h-9 text-green-500 invisible group-[.peer:checked+&]:visible">
                 <path stroke-linecap="round" stroke-linejoin="round"

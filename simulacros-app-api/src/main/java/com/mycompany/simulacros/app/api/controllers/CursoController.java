@@ -30,6 +30,16 @@ public class CursoController {
             return null;
         }
     }
+    
+    public Curso obtenerCurso(String carrera, String nombre) {
+        try {
+            CursoDB cursoDB = new CursoDB();
+            Curso curso = cursoDB.obtenerCurso(carrera, nombre);
+            return curso;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
 
     public Curso[] obtenerCursos(String carrera){
         Curso[] cursos;

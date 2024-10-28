@@ -3,4 +3,5 @@ export interface Problema{
     respuesta1: string;
     respuesta2: string;
     respuesta3: string;
+    respuesta4: string;
 }

@@ -2,16 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Curso } from '../../entities/Curso';
+import { RestConstants } from '../rest-constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CursosService {
-  url!: string;
+  restConstants: RestConstants;
+  constructor(private httpClient: HttpClient) { 
+    this.restConstants = new RestConstants();
+  }
 
-  constructor(private httpClient: HttpClient) { }
+  getCursos(carrera: string): Observable<Curso[]> {
+    return this.httpClient.get<Curso[]>(this.restConstants.getApiURL() + "curso/" + carrera);
+  }
 
-  getCursos(): Observable<Curso[]> {
-    return this.httpClient.get<Curso[]>(this.url + "cursos");
+  getCurso(carrera: string, curso: string): Observable<Curso> {
+    return this.httpClient.get<Curso>(this.restConstants.getApiURL() + "curso/" + carrera + "/" + curso);
   }
 }

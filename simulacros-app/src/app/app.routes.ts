@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 import { CursosComponent } from './Cursos/cursos/cursos.component';
-import { ReglasComponent } from './reglas/reglas.component';
 import { MainComponent } from './includes/main/main.component';
 import { CursoViewComponent } from './Cursos/curso-view/curso-view.component';
 import { DivisionViewComponent } from './División/division-view/division-view.component';
 import { CarreraViewComponent } from './Carrera/carrera-view/carrera-view.component';
 import { ExamenComponent } from './Exámenes/examen/examen.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
     {   path: 'cursos',
@@ -28,17 +28,17 @@ export const routes: Routes = [
         title: 'Home',
         component: MainComponent
     },
-    {   path: 'reglas',
-        title: 'Reglas',
-        component: ReglasComponent
+    {   path: 'examen/:curso/:tipo',
+        title: 'Examen',
+        component: ExamenComponent
+    },
+    {   path: '404',
+        title: 'No encontrado',
+        component: NotFoundComponent  
     },
     {   path: '',
         redirectTo: 'main',
         pathMatch: 'full'  
     },
-    {   path: 'examen/:curso/:tipo',
-        title: 'Examen',
-        component: ExamenComponent
-    },
-    {   path: '**', redirectTo: 'main'},
+    {   path: '**', redirectTo: '404'},
 ];
