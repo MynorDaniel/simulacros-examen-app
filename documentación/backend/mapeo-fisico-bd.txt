@@ -27,4 +27,46 @@ CREATE TABLE curso (
     CONSTRAINT fk_curso_division FOREIGN KEY (division) REFERENCES division(nombre)
 );
 
+CREATE TABLE examen (
+    nombre VARCHAR(100) NOT NULL,
+    curso VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    tiempo INT,
+    preguntas INT,
+    CONSTRAINT pk_examen PRIMARY KEY (nombre, curso),
+    CONSTRAINT fk_examen_curso FOREIGN KEY (curso) REFERENCES curso(nombre)
+);
+
+CREATE TABLE pregunta (
+    id INT AUTO_INCREMENT,
+    imagen LONGBLOB,
+    curso VARCHAR(100) NOT NULL,
+    tipo VARCHAR(100) NOT NULL,
+    respuesta_correcta VARCHAR(100) NOT NULL,
+    respuesta_incorrecta1 VARCHAR(100) NOT NULL,
+    respuesta_incorrecta2 VARCHAR(100) NOT NULL,
+    respuesta_incorrecta3 VARCHAR(100) NOT NULL,
+    CONSTRAINT pk_pregunta PRIMARY KEY (id)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
