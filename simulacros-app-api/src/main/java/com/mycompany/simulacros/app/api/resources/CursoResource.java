@@ -33,6 +33,15 @@ public class CursoResource {
         return cursos != null ? Response.ok(cursos).build() : Response.status(Response.Status.BAD_REQUEST).build();
     }
     
+    @GET
+    @Path("/{carrera}/{nombre}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response obtenerCurso(@PathParam("carrera") String carrera, @PathParam("nombre") String nombre){
+        CursoController cursoController = new CursoController();
+        Curso curso = cursoController.obtenerCurso(carrera, nombre);
+        return curso != null ? Response.ok(curso).build() : Response.status(Response.Status.BAD_REQUEST).build();
+    }
+    
     @PATCH
     @Path("/{nombre}/{carrera}")
     @Consumes(MediaType.MULTIPART_FORM_DATA)

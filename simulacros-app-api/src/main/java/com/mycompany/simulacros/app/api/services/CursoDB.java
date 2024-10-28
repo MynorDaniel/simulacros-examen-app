@@ -102,7 +102,35 @@ public class CursoDB {
                 cursos.add(curso);
             }
         }
+        if (cursos.isEmpty()) {
+            throw new SQLException("No se encontraron cursos en base a la carrera " + carrera);
+        }
 
         return cursos.toArray(Curso[]::new);
+    }
+    
+    public Curso obtenerCurso(String carrera, String nombre) throws SQLException {
+        String query = "SELECT nombre, carrera, division, descripcion FROM curso WHERE carrera = ? AND nombre = ?";
+
+        Curso curso;
+        try (Connection conn = ConexionDB.getInstance().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, carrera);
+            stmt.setString(2, nombre);
+            ResultSet rs = stmt.executeQuery();
+
+            if (!rs.next()) {
+                throw new SQLException("No se encontro un curso en base a la carrera " + carrera + " y curso " + nombre);
+            }
+            String nombreCurso = rs.getString("nombre");
+            String carreraDb = rs.getString("carrera");
+            String division = rs.getString("division");
+            String descripcion = rs.getString("descripcion");
+
+            curso = new Curso(nombreCurso, carreraDb, division, descripcion);
+        }
+
+        return curso;
     }
 }

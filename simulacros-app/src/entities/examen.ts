@@ -1,5 +1,6 @@
 export interface Examen{
-    tipo: string,
+    nombre: string,
+    curso: string,
     descripcion: string,
     tiempo: number,
     preguntas: number

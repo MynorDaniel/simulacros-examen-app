@@ -51,7 +51,9 @@ public class DivisionDB {
             System.out.println("Error al obtener las divisiones: " + e.getMessage());
             throw new SQLException("Error al recuperar las divisiones");
         }
-
+        if (divisiones.isEmpty()) {
+            throw new SQLException("No se encontraron divisiones");
+        }
         return divisiones;
     }
 }

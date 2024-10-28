@@ -41,7 +41,9 @@ public class ExamenDB {
                     Examen examen = new Examen(nombre, cursoResult, descripcion, tiempo, preguntas);
                     examenesList.add(examen);
                 }
-
+                if (examenesList.isEmpty()) {
+                    throw new SQLException("No se encontraron examenes en base al curso " + curso);
+                }
                 return examenesList.toArray(Examen[]::new);
             }
         } catch (SQLException e) {
@@ -90,7 +92,10 @@ public class ExamenDB {
 
                 preguntasList.add(pregunta);
             }
-
+            if (preguntasList.isEmpty()) {
+                throw new SQLException("No se encontraron preguntas en base al curso " + curso + " y tipo " + tipo);
+            }
+            
             return preguntasList.toArray(Pregunta[]::new);
         }
     }
