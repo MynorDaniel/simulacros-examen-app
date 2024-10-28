@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgFor } from '@angular/common';
-import { MathjaxPipe } from '../../pipes/latex.pipe';
 import { ProblemasService } from '../../../services/problemas/problemas.service';
 import { Problema } from '../../../entities/problema';
 import { ProblemaComponent } from '../problema/problema.component';
@@ -9,7 +8,7 @@ import { problemasTest } from '../../../entities/tests/problemas-test';
 import { TemporizadorComponent } from "../../temporizador/temporizador.component";
 
 @Component({
-  imports: [NgFor, MathjaxPipe, ProblemaComponent, TemporizadorComponent],
+  imports: [NgFor, ProblemaComponent, TemporizadorComponent],
   selector: 'app-examen',
   standalone: true,
   templateUrl: './examen.component.html',
@@ -18,7 +17,7 @@ import { TemporizadorComponent } from "../../temporizador/temporizador.component
 export class ExamenComponent {
   problemas: Problema[] = problemasTest;
   respuestas: string[] = new Array(this.problemas.length);
-  resultados: string[] = ["8", "kladnalksd", "j94", "8asd"];
+  resultados: string[] = ["8", "kladnalksd", "P₂, 0.72 s", "8asd"];
   finalizado: boolean = false;
   correctas: number = 0;
   incorrectas: number = 0;
