@@ -26,7 +26,7 @@ public class ExamenController {
         }
     }
 
-    public InputStream[] obtenerPreguntas(String curso, String tipo) {
+    public Pregunta[] obtenerPreguntas(String curso, String tipo) {
         try {
             ExamenDB examenDB = new ExamenDB();
             return examenDB.obtenerPreguntas(curso, tipo);
@@ -54,5 +54,16 @@ public class ExamenController {
             return null;
         }
         return pr;
+    }
+
+    public boolean obtenerRespuesta(String id, String respuesta) {
+        ExamenDB examenDB = new ExamenDB();
+        boolean respuestaCorrecta;
+        try {
+            respuestaCorrecta = examenDB.respuestaCorrecta(Integer.parseInt(id), respuesta);
+        } catch (SQLException e) {
+            return false;
+        }
+        return respuestaCorrecta;
     }
 }
