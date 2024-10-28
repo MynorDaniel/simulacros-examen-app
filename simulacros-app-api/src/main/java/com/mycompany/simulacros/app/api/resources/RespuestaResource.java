@@ -5,6 +5,7 @@
 package com.mycompany.simulacros.app.api.resources;
 
 import com.mycompany.simulacros.app.api.controllers.ExamenController;
+import com.mycompany.simulacros.app.api.models.Respuesta;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
 
@@ -15,12 +16,12 @@ import jakarta.ws.rs.core.*;
 @Path("respuesta")
 public class RespuestaResource {
     
-    @GET
-    @Path("/{id}/{respuesta}")
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Response respuesta(@PathParam("id") String id, @PathParam("respuesta") String respuesta) {
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response respuesta(Respuesta respuesta) {
         ExamenController examenController = new ExamenController();
-        boolean respuestaCorrecta = examenController.obtenerRespuesta(id, respuesta);
+        boolean respuestaCorrecta = examenController.obtenerRespuesta(respuesta);
         return respuestaCorrecta ? Response.status(Response.Status.OK).build() : Response.status(Response.Status.BAD_REQUEST).build();
     }
 }
