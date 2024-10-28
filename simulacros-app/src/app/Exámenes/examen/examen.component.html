@@ -1,0 +1,76 @@
+<div class="bg-white dark:bg-gray-900">
+  @if (!finalizado) {
+
+  <h1 class="text-center text-gray-800 font-extrabold text-xl md:text-4xl lg:text-6xl pt-2 dark:text-white">Examen</h1>
+  <div class="container mx-auto lg:py-4 ">
+    @for (problema of problemas; track $index) {
+    <app-problema [problema]="problema" (addResponse)="addResponse($index, $event)"></app-problema>
+    }
+  </div>
+  <div class="flex justify-end mx-2 lg:mx-40 pb-4">
+    <button (click)="finalizarExamen()"
+      class="bg-purple-900 rounded-full p-3 text-white hover:bg-purple-700 transition-colors">Terminar Examen</button>
+  </div>
+  <app-temporizador [duration]="1" (countdownFinished)="onCountdownFinish()"></app-temporizador>
+  } @else {
+    @if (correctas == problemas.length) {
+      <div class="bg-purple-900 py-2">
+        <h1 class="text-center font-bold text-xl md:text-3xl lg:text-5xl pt-2 text-white">¡Felicidades! has respondido todo correcto 🥳🎉</h1>
+      </div>
+    }
+  <div class="container mx-auto lg:py-4 ">
+    <div class="bg-slate-100 dark:bg-gray-800 rounded-lg">
+      <h1 class="text-center text-gray-800 font-extrabold text-xl md:text-4xl lg:text-6xl pt-2 dark:text-white">Examen
+        Finalizado</h1>
+      <div class="my-20">
+        <h1 class="text-center text-gray-800 font-bold text-xl md:text-3xl lg:text-5xl pt-2 dark:text-white">Resultados:
+        </h1>
+        <div class="my-5 lg:my-10">
+          <h1
+            class="flex flex-row justify-center text-gray-800 font-extrabold text-xl md:text-4xl lg:text-6xl pt-2 dark:text-white">
+            <div class="mr-1 lg:mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="max-h-16 lg:h-16 h-6 text-green-500" viewBox="0 0 24 24">
+                <path fill="currentColor" d="m9 20.42l-6.21-6.21l2.83-2.83L9 14.77l9.88-9.89l2.83 2.83z" />
+              </svg>
+            </div>
+            {{correctas}} Respuestas Correctas
+          </h1>
+        </div>
+        <div class="my-5 lg:my-10">
+          <h1
+            class="flex flex-row justify-center text-center text-gray-800 font-extrabold text-xl md:text-4xl lg:text-6xl pt-2 dark:text-white">
+            <div class="mr-1 lg:mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="max-h-16 lg:h-16 h-6 text-red-500" viewBox="0 0 48 48">
+                <g fill="currentColor">
+                  <path
+                    d="M16.222 31.778a1 1 0 0 1 0-1.414L22.586 24l-6.364-6.364a1 1 0 0 1 1.414-1.414L24 22.586l6.364-6.364a1 1 0 0 1 1.414 1.414L25.414 24l6.364 6.364a1 1 0 0 1-1.414 1.414L24 25.414l-6.364 6.364a1 1 0 0 1-1.414 0" />
+                  <path fill-rule="evenodd"
+                    d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4S4 12.954 4 24s8.954 20 20 20m0-2c9.941 0 18-8.059 18-18S33.941 6 24 6S6 14.059 6 24s8.059 18 18 18"
+                    clip-rule="evenodd" />
+                </g>
+              </svg>
+            </div>
+            {{incorrectas}} Respuestas Incorrectas
+          </h1>
+        </div>
+        <div class="my-5 lg:my-10">
+          <h1
+            class="flex flex-row justify-center text-center text-gray-800 font-extrabold text-xl md:text-4xl lg:text-6xl pt-2 dark:text-white">
+            <div class="mr-1 lg:mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="max-h-16 lg:h-14 h-6 text-gray-500" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m0 14A6 6 0 1 1 8 2a6 6 0 0 1 0 12" />
+              </svg>
+            </div>
+            {{vacias}} Preguntas sin Responder
+          </h1>
+        </div>
+      </div>
+      <div class="pb-3">
+        <h1 class="text-center text-gray-800 font-bold text-xl md:text-3xl lg:text-5xl pt-2 dark:text-white">Total</h1>
+        <h1 class="text-center text-gray-800 font-bold text-xl md:text-3xl lg:text-5xl pt-2 dark:text-white">{{correctas}}/{{problemas.length}}</h1>
+      </div>
+    </div>
+  </div>
+  
+  }
+</div>

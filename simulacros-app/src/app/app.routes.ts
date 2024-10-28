@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { CursosComponent } from './cursos/cursos.component';
+import { CursosComponent } from './Cursos/cursos/cursos.component';
 import { ReglasComponent } from './reglas/reglas.component';
-import { ExamenComponent } from './examen/examen.component';
-import { MainComponent } from './main/main.component';
-import { CursoViewComponent } from './curso-view/curso-view.component';
-import { DivisionViewComponent } from './division-view/division-view.component';
-import { CarreraViewComponent } from './carrera-view/carrera-view.component';
+import { MainComponent } from './includes/main/main.component';
+import { CursoViewComponent } from './Cursos/curso-view/curso-view.component';
+import { DivisionViewComponent } from './División/division-view/division-view.component';
+import { CarreraViewComponent } from './Carrera/carrera-view/carrera-view.component';
+import { ExamenComponent } from './Exámenes/examen/examen.component';
 
 export const routes: Routes = [
     {   path: 'cursos',
@@ -37,6 +37,7 @@ export const routes: Routes = [
         pathMatch: 'full'  
     },
     {   path: 'examen/:curso/:tipo',
+        title: 'Examen',
         component: ExamenComponent
     },
     {   path: '**', redirectTo: 'main'},

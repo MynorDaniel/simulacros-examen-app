@@ -1,0 +1,1 @@
+export const Api_URL: string = "http://localhost:8080/simulacros-app-api/api/v1/";
