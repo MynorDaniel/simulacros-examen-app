@@ -1,19 +1,20 @@
 <div class="bg-white dark:bg-gray-900">
   @if (!finalizado) {
 
-  <h1 class="text-center text-gray-800 font-extrabold text-xl md:text-4xl lg:text-6xl pt-2 dark:text-white">Examen</h1>
+  <h1 class="text-center text-gray-800 font-extrabold text-xl md:text-4xl lg:text-6xl pt-2 dark:text-white">{{curso}}</h1>
+  <h1 class="text-center text-gray-800 font-extrabold text-xl md:text-4xl lg:text-6xl pt-2 dark:text-white">{{tipo}}</h1>
   <div class="container mx-auto lg:py-4 ">
-    @for (problema of problemas; track $index) {
-    <app-problema [problema]="problema" (addResponse)="addResponse($index, $event)"></app-problema>
+    @for (pregunta of preguntas; track $index) {
+    <app-pregunta [pregunta]="pregunta" (addResponse)="addResponse($event)"></app-pregunta>
     }
   </div>
   <div class="flex justify-end mx-2 lg:mx-40 pb-4">
     <button (click)="finalizarExamen()"
       class="bg-purple-900 rounded-full p-3 text-white hover:bg-purple-700 transition-colors">Terminar Examen</button>
   </div>
-  <app-temporizador [duration]="1" (countdownFinished)="onCountdownFinish()"></app-temporizador>
+  <app-temporizador [duration]="50" (countdownFinished)="onCountdownFinish()"></app-temporizador>
   } @else {
-    @if (correctas == problemas.length) {
+    @if (correctas == total) {
       <div class="bg-purple-900 py-2">
         <h1 class="text-center font-bold text-xl md:text-3xl lg:text-5xl pt-2 text-white">¡Felicidades! todas las respuestas son correctas 🥳🎉</h1>
       </div>
@@ -67,10 +68,9 @@
       </div>
       <div class="pb-3">
         <h1 class="text-center text-gray-800 font-bold text-xl md:text-3xl lg:text-5xl pt-2 dark:text-white">Total</h1>
-        <h1 class="text-center text-gray-800 font-bold text-xl md:text-3xl lg:text-5xl pt-2 dark:text-white">{{correctas}}/{{problemas.length}}</h1>
+        <h1 class="text-center text-gray-800 font-bold text-xl md:text-3xl lg:text-5xl pt-2 dark:text-white">{{correctas}}/{{total}}</h1>
       </div>
     </div>
   </div>
-  
   }
 </div>

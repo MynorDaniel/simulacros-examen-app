@@ -11,7 +11,7 @@
         <p class="mb-2 text-gray-200"><b>Contenido:</b> {{examen.descripcion}}</p>
         <p class="mb-2 text-gray-200"><b>Tiempo:</b> {{examen.tiempo}} minutos.</p>
         <p class="mb-2 text-gray-200"><b>Preguntas:</b> {{examen.preguntas}}</p>
-        <button routerLink="/examen/s/s" class="bg-red-600 p-3 my-2 font-bold rounded-full">Iniciar Examen</button>
+        <button routerLink="/examen/{{examen.curso}}/{{examen.nombre}}" class="bg-red-600 p-3 my-2 font-bold rounded-full">Iniciar Examen</button>
       </span>
     </label>
   </section>

@@ -16,4 +16,5 @@ export class ExamenesService {
   getExamenes(curso: string): Observable<Examen[]> {
     return this.httpClient.get<Examen[]>(this.restConstants.getApiURL() + "examen/" + curso);
   }
+  
 }
