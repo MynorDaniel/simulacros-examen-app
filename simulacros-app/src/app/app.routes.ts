@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { CursosComponent } from './Cursos/cursos/cursos.component';
-import { ReglasComponent } from './reglas/reglas.component';
 import { MainComponent } from './includes/main/main.component';
 import { CursoViewComponent } from './Cursos/curso-view/curso-view.component';
 import { DivisionViewComponent } from './División/division-view/division-view.component';
@@ -27,10 +26,6 @@ export const routes: Routes = [
     {   path: 'main',
         title: 'Home',
         component: MainComponent
-    },
-    {   path: 'reglas',
-        title: 'Reglas',
-        component: ReglasComponent
     },
     {   path: '',
         redirectTo: 'main',

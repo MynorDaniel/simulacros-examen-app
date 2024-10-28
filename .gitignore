@@ -1,3 +1,4 @@
 simulacros-api/target/
 /simulacros-app-api/target/
 /simulacros-app-api/src/main/java/com/mycompany/simulacros/app/api/bd/*.java
+/simulacros-app/nbproject/private/
